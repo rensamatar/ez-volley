@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">EZ-volley</string>
+
+    <!--Button-->
+    <string name="btn_request">Request API</string>
+    <string name="btn_json_array">Get JSON array</string>
+    <string name="btn_json_object">Get JSON object</string>
+
 </resources>

@@ -12,6 +12,7 @@ import com.android.volley.NetworkResponse;
 import com.android.volley.VolleyError;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import fi.iwa.ez_volley.R;
@@ -65,7 +66,11 @@ public class JSONObjectRequestActivity extends AppCompatActivity {
                     JSONObject jsonObject = (JSONObject) response;
 
                     // Parse your json response here.
-                    responseMessage.setText(jsonObject.toString());
+                    try {
+                        responseMessage.setText(jsonObject.toString(2));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
 

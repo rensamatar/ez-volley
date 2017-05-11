@@ -10,6 +10,8 @@ import android.widget.TextView;
 import com.android.volley.NetworkResponse;
 import com.android.volley.VolleyError;
 import org.json.JSONArray;
+import org.json.JSONException;
+
 import fi.iwa.ez_volley.R;
 import fi.iwa.ez_volley.config.Endpoints;
 import fi.iwa.ez_volley.listener.VolleyResponseListener;
@@ -61,7 +63,11 @@ public class JSONArrayRequestActivity extends AppCompatActivity {
                     JSONArray jsonArray = (JSONArray) response;
 
                     // Parse your json response here.
-                    responseMessage.setText(jsonArray.toString());
+                    try {
+                        responseMessage.setText(jsonArray.toString(2));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
 
